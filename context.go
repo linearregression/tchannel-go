@@ -65,6 +65,8 @@ type IncomingCall interface {
 	// if you are forwarding a request and wish to retain the CallerName(), which is not
 	// possible to set manually.
 	CallOptions() *CallOptions
+
+	CalledAt() time.Time
 }
 
 func getTChannelParams(ctx context.Context) *tchannelCtxParams {

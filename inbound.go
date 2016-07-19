@@ -295,6 +295,10 @@ func (call *InboundCall) Arg3Reader() (ArgReader, error) {
 	return call.arg3Reader()
 }
 
+func (call *InboundCall) CalledAt() time.Time {
+	return call.response.calledAt
+}
+
 // Response provides access to the InboundCallResponse object which can be used
 // to write back to the calling peer
 func (call *InboundCall) Response() *InboundCallResponse {
